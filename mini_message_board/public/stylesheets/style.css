@@ -35,6 +35,28 @@ a {
   color: #999;
 }
 
+button {
+  padding: 12px 20px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  background-color: #007aff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0053ba;
+}
+
+button:focus,
+button:active {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.4);
+}
+
 .ios-form-container {
   display: flex;
   flex-direction: column;
