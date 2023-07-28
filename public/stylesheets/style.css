@@ -11,8 +11,8 @@ a {
 .message-cont {
   padding: 10px;
   border-radius: 8px;
-  background-color: #fff; /* White background for message container */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* iOS-like box shadow */
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 10px;
   width: 90%;
 }
