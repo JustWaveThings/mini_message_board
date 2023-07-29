@@ -1,5 +1,5 @@
-require('dotenv').config();
-const loadMessages = require('./loadMessages');
+/* require('dotenv').config();
+const Message = require('./models/message');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 
@@ -8,12 +8,13 @@ const mongoDB = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB
 async function main() {
   console.log('debug - about to connect to mongoDB');
   await mongoose.connect(mongoDB);
-  const messages = await loadMessages();
+  const messagesFromDB = await Message.find();
   await mongoose.connection.close();
   console.log('debug - should be done with mongoDB');
-  return messages;
+  return messagesFromDB;
 }
 
 main().catch(err => console.log(err));
 
 module.exports = main;
+ */
