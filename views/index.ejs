@@ -8,7 +8,7 @@
   <body>
     <h1><%= title %></h1>
     <button onclick="window.location.href='/new'">New Message</button>
-    <% message.forEach(function(message) { %>
+    <% message && message.forEach(function(message) { %>
     <div class="message-cont">
       <h3 class="user">message id: <%= message?._id || "null" %></h3>
       <h2 class="user">name: <%= message?.name || "name" %></h2>
