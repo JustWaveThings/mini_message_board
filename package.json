@@ -19,6 +19,7 @@
     "morgan": "~1.9.1"
   },
   "devDependencies": {
-    "@flydotio/dockerfile": "^0.4.0"
+    "@flydotio/dockerfile": "^0.4.0",
+    "ejs-lint": "^2.0.0"
   }
 }

@@ -4,17 +4,17 @@
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
   </head>
+
   <body>
     <h1><%= title %></h1>
     <button onclick="window.location.href='/new'">New Message</button>
-    <div>
-      <% messages.forEach(function(message) { %>
-      <div class="message-cont">
-        <h2 class="user"><%= message.user %></h2>
-        <p class="message"><%= message.text %></p>
-        <p class="added"><%= message.added %></p>
-      </div>
-      <% }); %>
+    <% message.forEach(function(message) { %>
+    <div class="message-cont">
+      <h3 class="user">message id: <%= message?._id || "null" %></h3>
+      <h2 class="user">name: <%= message?.name || "name" %></h2>
+      <p class="message">message: <%= message?.message || "message" %></p>
+      <p class="added">timestamp: <%= message?.timestamp || "timestamp" %></p>
     </div>
+    <% }) %>
   </body>
 </html>

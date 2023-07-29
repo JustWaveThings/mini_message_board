@@ -1,23 +1,22 @@
 require('dotenv').config();
-
+const Message = require('./models/message');
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', false);
 
 const mongoDB = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASS}@cluster0.dmc0his.mongodb.net/?retryWrites=true&w=majority`;
 
-main().catch(err => console.log(err));
-
-export const messages = [];
+const serverMessages = [];
 
 async function main() {
   console.log('debug - about to connect to mongoDB');
   await mongoose.connect(mongoDB);
-  console.log('debug - should be connected to mongoDB');
-  const message = require('./models/message');
-  await message.find({}).then(message => {
-    console.log('debug - messages: ', message);
-    messages.push(message);
-  });
-  mongoose.connection.close();
+  const messagesFromDB = await Message.find();
+  serverMessages.push(...messagesFromDB);
+  console.log('*****  messages from database now in backend array ', serverMessages);
+  await mongoose.connection.close();
   console.log('debug - should be done with mongoDB');
 }
+
+main().catch(err => console.log(err));
+
+module.exports = serverMessages;
